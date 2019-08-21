@@ -1,0 +1,93 @@
+html, body {
+    background-color: rgb(170, 170, 170);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5% auto 0;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 20px;
+    background-image: url('../img/grass.png');
+    user-select: none;
+
+    &__text {
+        font-size: 40px;
+    }
+
+    &__button {
+        $menuButtonBgC: rgb(216, 213, 25);
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        border: 5px solid darken($menuButtonBgC, 5);
+        border-radius: 5px;
+        background-color: $menuButtonBgC;
+        line-height: 50px;
+        transition: background-color 0.5s, border-color 0.5s;
+
+        &:hover {
+            border-color: darken($menuButtonBgC, 10);
+            background-color: darken($menuButtonBgC, 5);
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-hide {
+    display: none;
+}
+
+.snakeGame {
+    display: none;
+
+    &__field {
+        display: inline-block;
+        box-sizing: content-box;
+        overflow: hidden;
+        background-image: url('../img/grass.png');
+        background-clip: padding-box;
+
+        border-width: 20px;
+        border-style: solid;
+        border-image-source: url('../img/fieldBoundary.png');
+        border-image-slice: 43;
+    
+        > .mapCell {
+            float: left;
+            width: 20px;
+            height: 20px;
+        }
+    
+        > div.row-start{
+            clear: both;
+        }
+    
+        > .mapCell[data-game = "snake"] {
+            background-color: rgb(39, 39, 38);
+        }
+    
+        > .mapCell[data-type = "apple"] {
+            background-image: url('../img/apple.svg');
+            background-size: contain;
+        }
+    
+        > .mapCell[data-type = "strawberry"] {
+            background-image: url('../img/strawberry.svg');
+            fill: red;
+            background-size: contain;
+        }
+    
+        > .mapCell[data-game = "wall"] {
+            background-image: url('../img/stumps.png');
+            background-size: contain;
+        }
+    }
+}
+
+.snakeGame-start {
+    display: block;
+}

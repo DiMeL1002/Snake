@@ -1,0 +1,68 @@
+html, body {
+  background-color: #aaaaaa; }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5% auto 0;
+  width: 40vw;
+  height: 40vh;
+  border-radius: 20px;
+  background-image: url(images/grass.png);
+  user-select: none; }
+  .menu__text {
+    font-size: 40px; }
+  .menu__button {
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    border: 5px solid #c1be16;
+    border-radius: 5px;
+    background-color: #d8d519;
+    line-height: 50px;
+    transition: background-color 0.5s, border-color 0.5s; }
+    .menu__button:hover {
+      border-color: #aaa814;
+      background-color: #c1be16;
+      cursor: pointer; }
+
+.menu-hide {
+  display: none; }
+
+.snakeGame {
+  display: none; }
+  .snakeGame__field {
+    display: inline-block;
+    box-sizing: content-box;
+    overflow: hidden;
+    background-image: url(images/grass.png);
+    background-clip: padding-box;
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url(images/fieldBoundary.png);
+    border-image-slice: 43; }
+    .snakeGame__field > .mapCell {
+      float: left;
+      width: 20px;
+      height: 20px; }
+    .snakeGame__field > div.row-start {
+      clear: both; }
+    .snakeGame__field > .mapCell[data-game="snake"] {
+      background-color: #272726; }
+    .snakeGame__field > .mapCell[data-type="apple"] {
+      background-image: url(images/apple.svg);
+      background-size: contain; }
+    .snakeGame__field > .mapCell[data-type="strawberry"] {
+      background-image: url(images/strawberry.svg);
+      fill: red;
+      background-size: contain; }
+    .snakeGame__field > .mapCell[data-game="wall"] {
+      background-image: url(images/stumps.png);
+      background-size: contain; }
+
+.snakeGame-start {
+  display: block; }
+
+/*# sourceMappingURL=styles.css.map*/
